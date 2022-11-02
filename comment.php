@@ -1,8 +1,9 @@
-<?php session_start();
+<?php 
+session_start();
     $connect = mysqli_connect('localhost', 'root', '', 'dictionary');
 
-        $name = isset($_POST['word']) ? $_POST['word'] : '';
-        $comment = isset($_POST['definition']) ? $_POST['definition'] : ''; 
+        $word = isset($_POST['word']) ? $_POST['word'] : '';
+        $definition = isset($_POST['definition']) ? $_POST['definition'] : ''; 
 
         $word_error = '';
         $definition_error = '';
