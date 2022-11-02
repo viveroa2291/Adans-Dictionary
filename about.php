@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
 </head>
+<style>
+    <?php
+        include 'CSS/styles.css';
+    ?>
+</style>
 <?php
     include 'links.php';
 ?>

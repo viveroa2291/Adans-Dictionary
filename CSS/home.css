@@ -1,0 +1,17 @@
+.vocabulary {
+    margin-top: 1rem;
+    text-align: center;
+}
+.date {
+    float: right;
+    margin-top: 1rem;
+}
+.display-definition {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.remove-button, .edit-button { 
+    float: right;
+}

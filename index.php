@@ -1,6 +1,3 @@
-<?php
-    include 'comment.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +9,7 @@
 <style>
     <?php
         include 'CSS/styles.css';
+        include 'CSS/home.css';
     ?>
 </style>
 <?php
@@ -22,25 +20,9 @@
         include 'header.php';
     ?>
      <section class="word-section">
-                <div class="left-details">
-                    <h4 class="helloWorld">Enter Word</h4>
-                    <hr>
-                    <form method="post">
-                    <?php
-                        echo "<label for='word'>Enter Word: </label><b style='color: red;'>$word_error </b> <br>
-                        <input class='enter-word' type='text' name='word' value='$word'> <br>";
-                    ?>
-                    <label for="definition">Definition: </label> <?php echo '<b style="color: red;">'.$definition_error; echo '</b >' ?>
-                    <br>
-                    <textarea class="definition" name="definition" id="" cols="25" rows="1" width="1%" <?php echo $definition; ?>></textarea>
-                    <br>
-                    <input class="submit-button" type="submit" value="Submit">
-                    </form>
-                </div>
                 <div class="right-details">
-                    <h3 class="timeline">Vocabulary</h3>
+                    <h3 class="vocabulary">Adan's Vocabulary</h3>
                     <hr>
-                    
                     <?php 
                         $connect = mysqli_connect('localhost', 'root', '', 'dictionary'); 
 
@@ -50,8 +32,8 @@
                         while($record = mysqli_fetch_assoc($result )) 
                         {
                             echo '<div class="display-definition">';
-                            echo '<p class="word"><b>'.$record['word'].'</b><span class="date">'.$record['date'].'</span></p>';
-                            echo '<p class="definition">'.$record['definition'].'</p>';
+                                echo '<p class="word"><b>'.$record['word'].'</b><button class="remove-button">Remove</button><button class="edit-button">Edit</button></p>';
+                                echo '<p class="definition">'.$record['definition'].'<span class="date">'.'Date Added '.$record['date'].'</span></p>';
                             echo '</div>';
                         }
                     ?>

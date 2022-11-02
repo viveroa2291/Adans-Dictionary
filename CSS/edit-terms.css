@@ -1,0 +1,45 @@
+.enter-term {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.helloWorld {
+    margin-top: 1rem;
+    text-align: center;
+}
+.enter-word {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.definition {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}
+.enter-definition {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.submit-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.counter {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.definition-text {
+    display: flex;
+    flex-direction: column;
+
+}

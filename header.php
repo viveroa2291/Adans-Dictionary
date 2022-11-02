@@ -6,6 +6,7 @@
                 <a class="nav-link text-white top-link about" href="about.php">About</a>
                 <input class="search" type="text" placeholder="Search Term...">
                 <button type="submit" class="search-button"><i class="fa fa-search search-icon"></i></button>
+                <a class="nav-link text-white top-link add" href="addTerm.php">Add Term</a>
             </div>
         </div>
     </div>

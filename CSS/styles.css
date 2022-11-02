@@ -30,12 +30,16 @@ a.top-link:hover:before {
 .about {
     margin-left: 4rem;
 }
+.add {
+    margin-left: 8rem;
+}
 .search {
     position: absolute;
-    margin-left: 25rem;
+    left: 50%;
+    margin-left: -50px;
 }
 .search-button {
-    margin-left: 37rem;
+    margin-left: 51.5rem;
     z-index: 1;
     top: 10px;
     background-color: gray;
@@ -55,9 +59,6 @@ a.top-link:hover:before {
     display: block;
     color: white;
 }
-.definition {
-    font-size: 12px;
-}
 .display-definition {
     border: solid black 1px;
     border-radius: 5px;
@@ -67,11 +68,4 @@ a.top-link:hover:before {
 .word {
     text-align: left;
     color: #20d0fc;
-}
-.enter-word {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-    width: 50%;
 }
