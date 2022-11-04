@@ -15,3 +15,20 @@
 .remove-button, .edit-button { 
     float: right;
 }
+.remove-button , .edit-button {
+    border: solid black 2px;
+    background-color: gray;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.remove-button {
+    margin-left: 1px;
+
+}
+.remove-button:hover {
+    background-color: rgb(64, 64, 64);
+    color: #fff;
+    cursor: pointer;
+}

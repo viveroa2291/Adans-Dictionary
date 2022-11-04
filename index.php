@@ -1,3 +1,13 @@
+<?php
+    $connect = mysqli_connect('localhost', 'root', '', 'dictionary');
+
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $remove = "DELETE FROM Words WHERE id='$id'";
+        $delete = mysqli_query($connect, $remove);
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,13 +36,16 @@
                     <?php 
                         $connect = mysqli_connect('localhost', 'root', '', 'dictionary'); 
 
-                        $query = 'SELECT word, definition, date FROM Words';
+                        $query = 'SELECT * FROM Words';
                         $result = mysqli_query($connect, $query);
 
-                        while($record = mysqli_fetch_assoc($result )) 
+                        while($record = mysqli_fetch_assoc($result)) 
                         {
                             echo '<div class="display-definition">';
-                                echo '<p class="word"><b>'.$record['word'].'</b><button class="remove-button">Remove</button><button class="edit-button">Edit</button></p>';
+                                echo '<p class="word"><b>'.$record['word'].'</b>
+                                        <a href="index.php?id='.$record['id'].'" class="remove-button">Remove</a>
+                                        <button class="edit-button" name="edit-button">Edit</button>
+                                    </p>';
                                 echo '<p class="definition">'.$record['definition'].'<span class="date">'.'Date Added '.$record['date'].'</span></p>';
                             echo '</div>';
                         }

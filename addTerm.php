@@ -36,7 +36,6 @@
                 <textarea class="definition" name="definition" id="text-area" cols="30" rows="2" width="1%" maxlenght="1000" <?php echo $definition; ?>></textarea>
                 <span id="counter" class="counter"></span>
             </div>
-            
             <input class="submit-button" type="submit" value="Submit">
         </form>
     </div>
