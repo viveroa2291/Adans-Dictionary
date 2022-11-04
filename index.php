@@ -46,7 +46,9 @@
                                         <a href="index.php?id='.$record['id'].'" class="remove-button">Remove</a>
                                         <button class="edit-button" name="edit-button">Edit</button>
                                     </p>';
-                                echo '<p class="definition">'.$record['definition'].'<span class="date">'.'Date Added '.$record['date'].'</span></p>';
+                                echo '<p class="definition">'.$record['definition'].'
+                                        <span class="date">'.'Date Added '.$record['date'].'</span>
+                                    </p>';
                             echo '</div>';
                         }
                     ?>

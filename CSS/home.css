@@ -2,15 +2,22 @@
     margin-top: 1rem;
     text-align: center;
 }
+.word {
+    text-align: left;
+    color: #20d0fc;
+    font-size: 14px;
+}
 .date {
     float: right;
     margin-top: 1rem;
+   
 }
 .display-definition {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    padding: 1.5%;
 }
 .remove-button, .edit-button { 
     float: right;
@@ -18,17 +25,17 @@
 .remove-button , .edit-button {
     border: solid black 2px;
     background-color: gray;
+    color: white;
     border-radius: 5px;
     font-size: 1em;
     padding: 5px 10px;
-    text-decoration: none;
 }
 .remove-button {
     margin-left: 1px;
-
 }
-.remove-button:hover {
+.remove-button:hover, .edit-button:hover {
     background-color: rgb(64, 64, 64);
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
 }
