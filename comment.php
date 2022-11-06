@@ -24,6 +24,9 @@ session_start();
             if($errors == 0)
             {
                 $query = 'INSERT INTO Words (word, definition) VALUES ("'.addslashes($word).'", "'.addslashes($definition).'")';
+                
+                $_SESSION['message'] = "Term has been added!";
+                $_SESSION['messageType'] = "success";
 
                 $message = 'You have received a new comment on your home page: 
                 Word: '.$word.'
