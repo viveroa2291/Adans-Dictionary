@@ -5,13 +5,20 @@ ta.addEventListener("input", function (e) {
   count.innerHTML = 1000 - this.value.length;
 });
 
-function showForms() {
-  var forms = document.getElementById("edit-forms");
+var enterWord = document.getElementById('enter-word');
+var enterDefinition = document.getElementById('enter-definition');
+var saveButton = document.getElementById('save-button');
+const forms = document.getElementById("edit-forms");
 
-  if(forms.style.display === "none") {
-    forms.style.display = "block";
-  }
-  else {
-    forms.style.display = "none";
-  }
+function showForms(index) { 
+    enterWord.style.display = "block";
+    saveButton.style.display = "block";
+    enterDefinition.style.display = "block";  
+}
+
+function hideForms() {
+    saveButton.style.display = "none";
+    enterDefinition.style.display = "none";
+    enterWord.style.display = "none";
+
 }

@@ -33,7 +33,7 @@
             <label class='enter-definition' for="definition">Definition: </label> <?php echo '<b style="color: red;">'.$definition_error; echo '</b >' ?>
             <br>
             <div class="definition-text">
-                <textarea class="definition" name="definition" id="text-area" cols="30" rows="2" width="1%" maxlenght="1000" <?php echo $definition; ?>></textarea>
+                <textarea class="definition" name="definition" id="text-area" cols="75" rows="5" width="1%" maxlenght="1000" <?php echo $definition; ?>></textarea>
                 <span id="counter" class="counter"></span>
             </div>
             <input class="submit-button" type="submit" value="Submit">

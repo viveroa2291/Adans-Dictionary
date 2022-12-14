@@ -5,7 +5,8 @@
 .word {
     text-align: left;
     color: #20d0fc;
-    font-size: 14px;
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .date {
     float: right;
@@ -17,7 +18,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    padding: 1.5%;
+    padding: 2.5%;
 }
 .remove-button, .edit-button { 
     float: right;
@@ -80,4 +81,37 @@
 }
 .edit-forms {
     display: none;
+}
+.save-button {
+    border: solid black 2px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 5px 10px; 
+    margin-right: auto;
+    margin-left: auto;
+    display: none;
+}
+.save-button:hover {
+    background-color: rgb(64, 64, 64);
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; 
+}
+.enter-definition {
+    display: none;
+}
+.enter-word {
+    display: none;
+}
+.numbers {
+    text-align: center;
+    font-size: 15px;
+}
+.remove-button5 {
+    color: red;
+}
+.remove-button6 {
+    color: green;
 }

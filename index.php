@@ -59,26 +59,51 @@ session_start();
                 <div class="right-details">
                     <h3 class="vocabulary">Adan's Vocabulary</h3>
                     <hr>
+                    <a id="rko" onclick="showForms()">Touch me</a> 
                     <?php 
                         $connect = mysqli_connect('localhost', 'root', '', 'dictionary'); 
 
                         $query = 'SELECT * FROM Words';
                         $result = mysqli_query($connect, $query);
-
+                        $count = 0;
+                            
+                        for($i = 0; $i < mysqli_num_rows($result); $i++) {
+                            $record = mysqli_fetch_assoc($result);
+                            
+                            echo '<div class="display-definition" id="display-definition display-definition'.$i.'">';
+                                echo '<p class="word"><b>'.$i.'. '.$record['word'].'</b> </p>';
+                                echo '<input class="enter-word" id="enter-word" type="text" name="word" value="'.$record['word'].'"></input>'; // This is the input 
+                                echo '<a href="index.php?id='.$record['id'].'" class="remove-button remove-button'.$i.'">Remove</a>';
+                                echo '<a href="index.php?id='.$record['id'].'" class="edit-button" id="edit-forms edit-forms'.$i.'" onclick="showForms('.$i.')">Edit</a>'; 
+                                echo '<p class="definition">'.$record['definition'].'</p>';
+                                echo '<textarea class="enter-definition" name="definition" id="enter-definition" cols="50" rows="5" width="1%" maxlenght="1000">'.$record['definition'].'</textarea>'; // This is the input
+                                echo '<span class="date">'.'Date Added '.$record['date'].'</span>';
+                                echo '<button class="save-button" id="save-button" onclick="hideForms('.$i.')">Save</button>';
+                            echo '</div>'; 
+                        }
+                        /*
+                        for($j = $count; $j < mysqli_num_rows($result); $j++) {
+                            
+                        }
+                        */
+                        /*
                         while($record = mysqli_fetch_assoc($result)) 
                         {
                             echo '<div class="display-definition">';
-                                echo '<p class="word"><b>'.$record['word'].'</b>
-                                        <a href="index.php?id='.$record['id'].'" class="remove-button">Remove</a>
-                                        <a href="index.php?id='.$record['id'].'" class="edit-button" onclick="showForms()">Edit</a>
-                                    </p>';
-                                echo '<p class="definition">'.$record['definition'].'
-                                        <span class="date">'.'Date Added '.$record['date'].'</span>
-                                    </p>';
+                                echo '<p class="word"><b>'.$record['word'].'</b> </p>';
+                                echo '<input class="enter-word" id="enter-word" type="text" name="word" value="'.$record['word'].'"></input>'; // This is the input 
+                                echo '<a href="index.php?id='.$record['id'].'" class="remove-button">Remove</a>';
+                                echo '<a href="index.php?id='.$record['id'].'" class="edit-button" id="edit-forms" onclick="showForms()">Edit</a>';
+                                echo '<p class="definition">'.$record['definition'].'</p>';
+                                echo '<textarea class="enter-definition" name="definition" id="enter-definition" cols="50" rows="5" width="1%" maxlenght="1000">'.$record['definition'].'</textarea>'; // This is the input
+                                echo '<span class="date">'.'Date Added '.$record['date'].'</span>';
+                                echo '<button class="save-button" id="save-button" onclick="hideForms()">Save</button>';
                             echo '</div>';
                         }
+                        */
                     ?>
-                </div>                        
+                </div>                       
+                
                 <form class="edit-forms" id="edit-forms" action="index.php" method="POST">
                     <label class="word-label" for="">Word</label>
                     <input id="edit-word" type="text" name="word" class="form-control edit-word" value="<?php ?>">
