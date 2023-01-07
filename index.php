@@ -1,7 +1,7 @@
 <?php
-$update = false;
 session_start();
     $connect = mysqli_connect('localhost', 'root', '', 'dictionary');
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
     $word = isset($_POST['word']) ? $_POST['word'] : '';
     $definition = isset($_POST['definition']) ? $_POST['definition'] : '';
 
@@ -17,13 +17,8 @@ session_start();
         $_SESSION['messageType'] = "danger";
     }
     if(isset($_POST['update'])) {
-        $id = $_POST['id'];
-        $word = $_POST['word'];
-        $definition = $_POST['definition'];
-        $result = mysqli_query($connect, "UPDATE Words SET word = '$word', definition = '$defintion' WHERE id='34'");
-        
-            $_SESSION['message'] = "Term has been edited";    
-           // header("location: index.php");
+        $result = mysqli_query($connect, "UPDATE Words SET word = '$word', definition = '$definition' WHERE id='$id'");
+        $_SESSION['message'] = "Term has been edited";    
     }
 ?>
 <!DOCTYPE html>
@@ -61,7 +56,6 @@ session_start();
                 <div class="right-details">
                     <h3 class="vocabulary">Adan's Vocabulary</h3>
                     <hr>
-                    <!-- <a id="rko" onclick="showForms()">Touch me</a>  -->
                     <?php 
                         $connect = mysqli_connect('localhost', 'root', '', 'dictionary'); 
 
@@ -71,8 +65,9 @@ session_start();
                             
                         for($i = 0; $i < mysqli_num_rows($result); $i++) {
                             $record = mysqli_fetch_assoc($result);
+                            $id = $record['id'];
                             $word = $record['word'];
-                            $definition = $record['definition']; // Might delete this line. 
+                            $definition = $record['definition']; 
                             $date = $record['date'];
 
                             echo '<div class="display-definition" id="display-definition display-definition'.$i.'">';
@@ -83,10 +78,11 @@ session_start();
                                 echo '<p class="definition">'.$definition.'</p>';
 
                                 echo '<div class="date">'.'Date Added '.$date.'</div>';
-                                // echo '<a href="index.php?edit='.$record['word'].'" class="save-button" id="save-button'.$i.'" onclick="hideForms('.$i.')">Save</a>';
+                                
                                 echo '<form method="post">';                           
                                 echo '<input class="enter-word" id="enter-word'.$i.'" type="text" name="word" value="'.$word.'"></input>'; // This is the input 
                                 echo '<textarea class="enter-definition" name="definition" value="'.$definition.'" id="enter-definition'.$i.'" cols="50" rows="5" width="1%" maxlenght="1000">'.$definition.'</textarea>'; // This is the input
+                                echo '<input type="hidden"  name="id" value="'.$id.'"></input>';
                                 echo '<button type="submit" name="update" class="save-button" id="save-button'.$i.'" onclick="hideForms('.$i.')" >Save</button>';
                                 echo '</form>';
                             echo '</div>'; 
