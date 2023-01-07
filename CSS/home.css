@@ -10,15 +10,14 @@
 }
 .date {
     float: right;
-    margin-top: 1rem;
-   
 }
 .display-definition {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    padding: 2.5%;
+    padding: 1.5%;
+    padding-bottom: 3rem;
 }
 .remove-button, .edit-button { 
     float: right;
@@ -34,11 +33,25 @@
 .remove-button {
     margin-left: 1px;
 }
-.remove-button:hover, .edit-button:hover {
+.remove-button:hover, .edit-button:hover, .save-button:hover {
     background-color: rgb(64, 64, 64);
     color: #fff;
     cursor: pointer;
     text-decoration: none;
+}
+.save-button {
+    display: none;
+    margin-top: .5rem;
+    margin-left: 30%;
+    text-align: center;
+    width: 10%;
+
+    border: solid black 2px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 5px 10px; 
 }
 .addTerm {
     text-align: center;
@@ -80,24 +93,7 @@
     margin-right: auto;
 }
 .edit-forms {
-    display: none;
-}
-.save-button {
-    border: solid black 2px;
-    background-color: gray;
-    color: white;
-    border-radius: 5px;
-    font-size: 1em;
-    padding: 5px 10px; 
-    margin-right: auto;
-    margin-left: auto;
-    display: none;
-}
-.save-button:hover {
-    background-color: rgb(64, 64, 64);
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none; 
+   display: none;
 }
 .enter-definition {
     display: none;
@@ -114,4 +110,37 @@
 }
 .remove-button6 {
     color: green;
+}
+@media (max-width: 1050px) {
+    .display-definition {
+        width: 75%;
+        padding: 1.5%;
+        padding-bottom: 1rem;
+    }
+    .word {
+        font-size: 14px;
+    }
+    .enter-word {
+        font-size: 12px;
+    }
+    .definition {
+        font-size: 12px;
+    }
+    .enter-definition {
+        font-size: 12px;
+    }
+    .remove-button, .edit-button {
+        font-size: 10px;
+    }
+    .save-button {
+        font-size: 10px;
+        width: 15%;
+    }
+    .date {
+        font-size: 10px;
+    }
+    .addTerm {
+        font-size: 12px;
+        width: 20%;
+    }
 }
