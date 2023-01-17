@@ -1,0 +1,37 @@
+.about-header {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 1rem;
+}
+.about-hr {
+    width: 50%;
+}
+.about-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+.picture img {
+    margin-top: -250px;
+    margin-left: -200px;
+}
+.about-paragraph {
+    width: 50%;
+    margin-right: 5rem;
+}
+.name-tag {
+    margin-left: 3rem;
+}
+article {
+    margin-bottom: 1rem;
+}

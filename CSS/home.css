@@ -106,12 +106,6 @@
     text-align: center;
     font-size: 15px;
 }
-.remove-button5 {
-    color: red;
-}
-.remove-button6 {
-    color: green;
-}
 @media (max-width: 1050px) {
     .display-definition {
         width: 75%;
