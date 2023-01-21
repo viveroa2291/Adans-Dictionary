@@ -8,8 +8,8 @@
 }
 .about-section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
 }
 .picture {
     display: block;
@@ -27,11 +27,17 @@
     margin-left: -200px;
 }
 .about-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
     width: 50%;
 }
 .about-paragraph {
-    width: 45%;
-    margin-right: 10rem;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%; 
     margin-top: 1rem;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -45,11 +51,54 @@ article {
     display: block;
     margin-left: auto;
     margin-right: auto; 
-    width: 60%;
+    width: 50%;
     font-family: 'Times New Roman', Times, serif;
 }
-h2 {
+h2, h4, h5 {
     text-align: center;
+}
+.blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+.block1 {
+    margin-left: -75rem;
+    background-color: aquamarine;
+    animation: flying 3s ease-in-out alternate infinite;
+}
+.block2 {
+    margin-left: -50rem;
+    background-color: red;
+    animation: flying 5s ease-in-out alternate infinite;
+}
+.block3 {
+    margin-left: 50rem;
+    background-color: orange;
+    animation: flying 10s ease-in-out alternate infinite;
+}
+.block4 {
+    margin-left: 75rem;
+    background-color: purple;
+    animation: flying 15s ease-in-out alternate infinite;
+}
+.block1, .block2, .block3, .block4 {
+    border: solid black 2px;
+    border-radius: 5px;
+    position: fixed; 
+    width: 50px;
+    height: 50px;
+}
+@keyframes flying {
+    from {
+        bottom: 0;
+        transform: rotate(0) scale(2);
+    }
+    to {
+        bottom: 95%;
+        opacity: 50%;
+        transform: rotate(1048deg) scale(1);
+    }
 }
 @media (max-width: 1050px) {
     .about-section {
